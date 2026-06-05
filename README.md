@@ -62,11 +62,10 @@ tests/                   Scaffold and import tests
 
 ## Current Status
 
-Milestone 5 is complete with local model training and evaluation. A RandomForest
-predictive maintenance classifier is trained locally, with metrics, feature
-importance, and an evaluation report generated from synthetic data. No
-deployment, model registry, real GCP resources, real equipment data,
-benchmarking suite, or credentials are included.
+Milestone 6 is complete with local deployment approval gates. The project now
+generates a model readiness decision and deployment readiness report from local
+synthetic artifacts. No real deployment, model registry, GCP resources, real
+equipment data, benchmarking suite, or credentials are included.
 
 ## Run Tests
 

@@ -1,15 +1,35 @@
-# Deployment gate placeholders for future model promotion decisions.
-gates:
-  require_tests_passed: true
-  require_metric_improvement: true
-  require_drift_below_threshold: true
-  require_manual_approval: false
+# Local deployment approval gates. These do not deploy or register a model.
+thresholds:
+  minimum_f1_score: 0.70
+  minimum_recall: 0.70
+  minimum_precision: 0.60
+  minimum_roc_auc: 0.75
+  maximum_allowed_high_severity_data_quality_issues: 0
+  maximum_allowed_critical_data_quality_issues: 0
 
-minimum_metrics:
-  recall: 0.75
-  precision: 0.60
-  f1: 0.65
+required_artifacts:
+  require_model_artifact: true
+  require_evaluation_report: true
+  require_metrics_file: true
+  require_feature_importance_file: true
+  require_data_quality_summary: true
 
-promotion:
-  from_stage: candidate
-  to_stage: approved
+paths:
+  model_artifact: models/predictive_maintenance_model.joblib
+  metrics_file: outputs/model_metrics.json
+  data_quality_summary: outputs/data_quality_summary.json
+  evaluation_report: reports/evaluation_report.md
+  feature_importance_file: outputs/feature_importance.csv
+  model_training_documentation: docs/model_training.md
+  gate_results_output_path: outputs/deployment_gate_results.json
+  readiness_report_output_path: reports/deployment_readiness_report.md
+
+governance:
+  allow_synthetic_data_warning: true
+  require_model_training_documentation: true
+  require_synthetic_data_limitation_warning: true
+
+readiness_status_rules:
+  ready: all required checks pass and allowed warnings only
+  review: no blocking failures but warnings require human review
+  blocked: missing required artifacts, critical data quality failures, or failed metric thresholds

@@ -1,0 +1,160 @@
+{
+  "overall_status": "Review",
+  "generated_at": "2026-06-05T03:50:19.899646+00:00",
+  "gate_summary": {
+    "total": 15,
+    "passed": 14,
+    "warnings": 1,
+    "failed": 0
+  },
+  "gate_results": [
+    {
+      "gate_name": "model_artifact_exists",
+      "category": "artifacts",
+      "status": "pass",
+      "severity": "critical",
+      "message": "Required artifact exists: /Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/models/predictive_maintenance_model.joblib",
+      "threshold": "required",
+      "observed_value": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/models/predictive_maintenance_model.joblib"
+    },
+    {
+      "gate_name": "metrics_file_exists",
+      "category": "artifacts",
+      "status": "pass",
+      "severity": "critical",
+      "message": "Required artifact exists: /Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/outputs/model_metrics.json",
+      "threshold": "required",
+      "observed_value": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/outputs/model_metrics.json"
+    },
+    {
+      "gate_name": "data_quality_summary_exists",
+      "category": "artifacts",
+      "status": "pass",
+      "severity": "critical",
+      "message": "Required artifact exists: /Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/outputs/data_quality_summary.json",
+      "threshold": "required",
+      "observed_value": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/outputs/data_quality_summary.json"
+    },
+    {
+      "gate_name": "evaluation_report_exists",
+      "category": "artifacts",
+      "status": "pass",
+      "severity": "critical",
+      "message": "Required artifact exists: /Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/reports/evaluation_report.md",
+      "threshold": "required",
+      "observed_value": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/reports/evaluation_report.md"
+    },
+    {
+      "gate_name": "feature_importance_exists",
+      "category": "artifacts",
+      "status": "pass",
+      "severity": "critical",
+      "message": "Required artifact exists: /Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/outputs/feature_importance.csv",
+      "threshold": "required",
+      "observed_value": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/outputs/feature_importance.csv"
+    },
+    {
+      "gate_name": "f1_score_threshold",
+      "category": "model_metrics",
+      "status": "pass",
+      "severity": "high",
+      "message": "f1=0.9534 meets threshold 0.7000.",
+      "threshold": 0.7,
+      "observed_value": 0.953405017921147
+    },
+    {
+      "gate_name": "recall_threshold",
+      "category": "model_metrics",
+      "status": "pass",
+      "severity": "high",
+      "message": "recall=0.9500 meets threshold 0.7000.",
+      "threshold": 0.7,
+      "observed_value": 0.95
+    },
+    {
+      "gate_name": "precision_threshold",
+      "category": "model_metrics",
+      "status": "pass",
+      "severity": "high",
+      "message": "precision=0.9568 meets threshold 0.6000.",
+      "threshold": 0.6,
+      "observed_value": 0.9568345323741008
+    },
+    {
+      "gate_name": "roc_auc_threshold",
+      "category": "model_metrics",
+      "status": "pass",
+      "severity": "high",
+      "message": "roc_auc=0.9998 meets threshold 0.7500.",
+      "threshold": 0.75,
+      "observed_value": 0.9997673656618611
+    },
+    {
+      "gate_name": "data_quality_overall_status",
+      "category": "data_quality",
+      "status": "pass",
+      "severity": "critical",
+      "message": "Data quality overall status is acceptable.",
+      "threshold": "passed or warning",
+      "observed_value": "passed"
+    },
+    {
+      "gate_name": "critical_data_quality_issue_limit",
+      "category": "data_quality",
+      "status": "pass",
+      "severity": "critical",
+      "message": "0 issues are within allowed limit 0.",
+      "threshold": 0,
+      "observed_value": 0
+    },
+    {
+      "gate_name": "high_data_quality_issue_limit",
+      "category": "data_quality",
+      "status": "pass",
+      "severity": "high",
+      "message": "0 issues are within allowed limit 0.",
+      "threshold": 0,
+      "observed_value": 0
+    },
+    {
+      "gate_name": "model_training_documentation_exists",
+      "category": "governance",
+      "status": "pass",
+      "severity": "high",
+      "message": "Model training documentation exists.",
+      "threshold": "required",
+      "observed_value": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/docs/model_training.md"
+    },
+    {
+      "gate_name": "synthetic_data_limitation_documented",
+      "category": "governance",
+      "status": "pass",
+      "severity": "medium",
+      "message": "Synthetic-data limitation is documented.",
+      "threshold": "synthetic limitation note",
+      "observed_value": "present"
+    },
+    {
+      "gate_name": "synthetic_data_review_warning",
+      "category": "governance",
+      "status": "warning",
+      "severity": "low",
+      "message": "Model uses synthetic data; review before treating readiness as production evidence.",
+      "threshold": "human review",
+      "observed_value": "synthetic local MVP"
+    }
+  ],
+  "blocking_issues": [],
+  "warnings": [
+    {
+      "gate_name": "synthetic_data_review_warning",
+      "category": "governance",
+      "status": "warning",
+      "severity": "low",
+      "message": "Model uses synthetic data; review before treating readiness as production evidence.",
+      "threshold": "human review",
+      "observed_value": "synthetic local MVP"
+    }
+  ],
+  "recommended_next_action": "Review warnings before proceeding to model registry simulation."
+}
