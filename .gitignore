@@ -21,10 +21,12 @@ outputs/*
 reports/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!data/processed/feature_table.csv
 !data/sample/.gitkeep
 !data/sample/*.csv
 !outputs/.gitkeep
 !outputs/data_quality_summary.json
+!outputs/feature_store_metadata.json
 !outputs/sample/
 !outputs/sample/.gitkeep
 !reports/.gitkeep

@@ -62,10 +62,10 @@ tests/                   Scaffold and import tests
 
 ## Current Status
 
-Milestone 3 is complete with local data ingestion, validation, and a generated
-data quality summary. The datasets remain fully synthetic and local-first. No
-cloud deployment, real GCP resources, real equipment data, ML models,
-benchmarking, or credentials are included.
+Milestone 4 is complete with local feature engineering, a model-ready feature
+table, and local feature store metadata. The datasets remain fully synthetic and
+local-first. No model training, cloud deployment, real GCP resources, real
+equipment data, benchmarking, or credentials are included.
 
 ## Run Tests
 

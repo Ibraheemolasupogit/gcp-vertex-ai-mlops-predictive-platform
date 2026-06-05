@@ -1,0 +1,82 @@
+{
+  "feature_table_path": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/data/processed/feature_table.csv",
+  "generated_at": "2026-06-05T03:31:02.089265+00:00",
+  "row_count": 18000,
+  "feature_count": 51,
+  "entity_keys": [
+    "machine_id"
+  ],
+  "timestamp_key": "timestamp",
+  "label_column": "failure_within_label_window",
+  "feature_version": "v1",
+  "source_datasets": [
+    "data/sample/machines.csv",
+    "data/sample/sensor_readings.csv",
+    "data/sample/maintenance_events.csv",
+    "data/sample/failure_events.csv"
+  ],
+  "feature_groups": {
+    "sensor": [
+      "current_temperature",
+      "current_vibration",
+      "current_pressure",
+      "current_runtime_hours",
+      "current_energy_consumption",
+      "current_operating_load",
+      "temperature_delta_from_machine_baseline",
+      "vibration_delta_from_machine_baseline",
+      "pressure_delta_from_machine_baseline",
+      "temperature_pressure_ratio",
+      "vibration_load_ratio",
+      "energy_per_runtime_hour"
+    ],
+    "rolling_window": [
+      "temperature_rolling_mean",
+      "temperature_rolling_max",
+      "temperature_rolling_min",
+      "temperature_rolling_std",
+      "vibration_rolling_mean",
+      "vibration_rolling_max",
+      "vibration_rolling_std",
+      "pressure_rolling_mean",
+      "pressure_rolling_min",
+      "pressure_rolling_std",
+      "operating_load_rolling_mean",
+      "energy_consumption_rolling_mean",
+      "temperature_rolling_mean_72h",
+      "temperature_rolling_max_72h",
+      "temperature_rolling_min_72h",
+      "temperature_rolling_std_72h",
+      "vibration_rolling_mean_72h",
+      "vibration_rolling_max_72h",
+      "vibration_rolling_std_72h",
+      "pressure_rolling_mean_72h",
+      "pressure_rolling_min_72h",
+      "pressure_rolling_std_72h",
+      "operating_load_rolling_mean_72h",
+      "energy_consumption_rolling_mean_72h"
+    ],
+    "maintenance": [
+      "days_since_last_maintenance",
+      "last_maintenance_type",
+      "cumulative_maintenance_count",
+      "cumulative_maintenance_cost",
+      "cumulative_downtime_hours",
+      "recent_maintenance_flag",
+      "average_risk_reduction_score"
+    ],
+    "machine_lifecycle": [
+      "machine_type",
+      "manufacturer",
+      "site_id",
+      "criticality",
+      "machine_age_days",
+      "expected_lifetime_years",
+      "estimated_lifetime_used_ratio"
+    ],
+    "label": [
+      "failure_within_label_window"
+    ]
+  },
+  "notes": "Local-only feature store simulation. Future milestones can map this design to BigQuery feature tables and Vertex AI feature management patterns without adding credentials here."
+}

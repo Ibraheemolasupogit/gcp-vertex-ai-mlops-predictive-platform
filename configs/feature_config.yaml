@@ -1,17 +1,31 @@
-# Feature engineering placeholder configuration.
+# Feature engineering configuration for the local synthetic platform.
+feature_engineering:
+  rolling_windows_hours: [24, 72]
+  label_window_hours: 168
+  recent_maintenance_window_days: 30
+  feature_version: "v1"
+  output_feature_table_path: data/processed/feature_table.csv
+  feature_store_metadata_path: outputs/feature_store_metadata.json
+
 features:
   numeric:
-    - temperature_c
-    - vibration_mm_s
-    - pressure_kpa
-    - operating_hours
+    - current_temperature
+    - current_vibration
+    - current_pressure
+    - current_runtime_hours
+    - current_energy_consumption
+    - current_operating_load
+    - temperature_delta_from_machine_baseline
+    - vibration_delta_from_machine_baseline
+    - pressure_delta_from_machine_baseline
+    - temperature_pressure_ratio
+    - vibration_load_ratio
+    - energy_per_runtime_hour
   categorical:
-    - equipment_type
+    - machine_type
+    - manufacturer
     - site_id
-
-windows:
-  rolling_mean_hours: [6, 24, 72]
-  rolling_std_hours: [24, 72]
+    - criticality
 
 outputs:
   feature_table_name: predictive_maintenance_features
