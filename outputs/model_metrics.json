@@ -1,0 +1,33 @@
+{
+  "model_type": "RandomForestClassifier",
+  "metrics": {
+    "accuracy": 0.9971111111111111,
+    "precision": 0.9568345323741008,
+    "recall": 0.95,
+    "f1": 0.953405017921147,
+    "roc_auc": 0.9997673656618611,
+    "positive_class_rate": 0.03111111111111111,
+    "prediction_positive_rate": 0.03088888888888889,
+    "training_rows": 13500,
+    "test_rows": 4500,
+    "feature_count": 50,
+    "generated_at": "2026-06-05T03:44:40.762646+00:00"
+  },
+  "confusion_matrix": {
+    "true_negative": 4354,
+    "false_positive": 6,
+    "false_negative": 7,
+    "true_positive": 133
+  },
+  "baseline": {
+    "name": "majority_class",
+    "metrics": {
+      "accuracy": 0.9688888888888889,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": null
+    },
+    "prediction_positive_rate": 0.0
+  }
+}

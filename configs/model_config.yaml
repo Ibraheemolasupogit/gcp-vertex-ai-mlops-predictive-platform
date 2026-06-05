@@ -1,17 +1,31 @@
-# Model configuration placeholder. Models are introduced in a later milestone.
-model:
-  problem_type: binary_classification
-  target: failure_within_window
-  baseline_algorithm: pending
-  random_seed: 42
+# Local model training configuration. No deployment or registry actions occur here.
+training:
+  random_state: 42
+  test_size: 0.25
+  target_column: failure_within_label_window
+  feature_table_path: data/processed/feature_table.csv
+  model_type: RandomForestClassifier
+  model_output_path: models/predictive_maintenance_model.joblib
+  metrics_output_path: outputs/model_metrics.json
+  feature_importance_output_path: outputs/feature_importance.csv
+  evaluation_report_path: reports/evaluation_report.md
+  baseline_enabled: true
+  excluded_columns:
+    - reading_id
+    - machine_id
+    - timestamp
+    - failure_within_label_window
+
+classifier:
+  n_estimators: 120
+  max_depth: 12
+  min_samples_leaf: 2
+  class_weight: balanced
 
 evaluation:
   primary_metric: recall
   secondary_metrics:
+    - accuracy
     - precision
     - f1
     - roc_auc
-
-registry:
-  local_registry_dir: outputs/model_registry
-  candidate_stage: candidate

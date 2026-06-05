@@ -27,11 +27,19 @@ reports/*
 !outputs/.gitkeep
 !outputs/data_quality_summary.json
 !outputs/feature_store_metadata.json
+!outputs/model_metrics.json
+!outputs/feature_importance.csv
 !outputs/sample/
 !outputs/sample/.gitkeep
 !reports/.gitkeep
+!reports/evaluation_report.md
 !reports/sample/
 !reports/sample/.gitkeep
+
+# Local model artifacts
+models/*
+!models/.gitkeep
+!models/predictive_maintenance_model.joblib
 
 # Secrets and local environment
 .env

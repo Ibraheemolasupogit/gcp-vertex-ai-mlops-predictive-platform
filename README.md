@@ -62,10 +62,11 @@ tests/                   Scaffold and import tests
 
 ## Current Status
 
-Milestone 4 is complete with local feature engineering, a model-ready feature
-table, and local feature store metadata. The datasets remain fully synthetic and
-local-first. No model training, cloud deployment, real GCP resources, real
-equipment data, benchmarking, or credentials are included.
+Milestone 5 is complete with local model training and evaluation. A RandomForest
+predictive maintenance classifier is trained locally, with metrics, feature
+importance, and an evaluation report generated from synthetic data. No
+deployment, model registry, real GCP resources, real equipment data,
+benchmarking suite, or credentials are included.
 
 ## Run Tests
 
