@@ -1,0 +1,15 @@
+# Deployment gate placeholders for future model promotion decisions.
+gates:
+  require_tests_passed: true
+  require_metric_improvement: true
+  require_drift_below_threshold: true
+  require_manual_approval: false
+
+minimum_metrics:
+  recall: 0.75
+  precision: 0.60
+  f1: 0.65
+
+promotion:
+  from_stage: candidate
+  to_stage: approved

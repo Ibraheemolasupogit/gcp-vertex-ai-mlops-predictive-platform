@@ -1,0 +1,17 @@
+# Model configuration placeholder. Models are introduced in a later milestone.
+model:
+  problem_type: binary_classification
+  target: failure_within_window
+  baseline_algorithm: pending
+  random_seed: 42
+
+evaluation:
+  primary_metric: recall
+  secondary_metrics:
+    - precision
+    - f1
+    - roc_auc
+
+registry:
+  local_registry_dir: outputs/model_registry
+  candidate_stage: candidate

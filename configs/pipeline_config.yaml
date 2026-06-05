@@ -1,0 +1,22 @@
+# Pipeline orchestration settings for future local and Vertex AI workflows.
+pipeline:
+  name: predictive-maintenance-local-pipeline
+  version: 0.1.0
+  mode: local
+  steps:
+    - data_generation
+    - ingestion
+    - feature_engineering
+    - training
+    - evaluation
+    - registry
+    - batch_prediction
+    - monitoring
+
+artifacts:
+  output_dir: outputs/
+  report_dir: reports/
+
+gcp_mapping:
+  vertex_ai_pipeline_name: predictive-maintenance-vertex-pipeline
+  # Add project, region, service account, and bucket values in a secure deployment milestone.

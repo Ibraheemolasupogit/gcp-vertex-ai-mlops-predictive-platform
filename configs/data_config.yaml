@@ -1,0 +1,19 @@
+# Data source and storage placeholders. No real credentials are stored here.
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  sample_dir: data/sample
+
+schema:
+  entity_id_column: equipment_id
+  timestamp_column: event_timestamp
+  target_column: failure_within_window
+
+quality_checks:
+  require_non_null_entity_id: true
+  require_monotonic_timestamps: false
+  max_missing_fraction: 0.05
+
+gcp_mapping:
+  cloud_storage_raw_path: gs://REPLACE_WITH_BUCKET/raw/
+  bigquery_dataset: REPLACE_WITH_DATASET

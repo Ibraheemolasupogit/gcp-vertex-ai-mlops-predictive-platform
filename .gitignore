@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local artifacts
+data/raw/*
+data/processed/*
+data/sample/*
+outputs/*
+reports/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/sample/.gitkeep
+!outputs/.gitkeep
+!outputs/sample/
+!outputs/sample/.gitkeep
+!reports/.gitkeep
+!reports/sample/
+!reports/sample/.gitkeep
+
+# Secrets and local environment
+.env
+.env.*
+*.key
+*.pem
+*.jsonl
+credentials/
+secrets/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

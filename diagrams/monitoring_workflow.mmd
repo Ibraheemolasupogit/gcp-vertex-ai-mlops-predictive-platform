@@ -1,0 +1,6 @@
+flowchart TD
+    A[Recent Predictions] --> B[Monitoring Checks]
+    C[Reference Data] --> B
+    B --> D{Threshold Breached?}
+    D -->|No| E[Continue Monitoring]
+    D -->|Yes| F[Create Retraining Recommendation]

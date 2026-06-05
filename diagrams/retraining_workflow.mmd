@@ -1,0 +1,8 @@
+flowchart TD
+    A[Monitoring Alert] --> B[Review Deployment Gates]
+    B --> C[Prepare Training Dataset]
+    C --> D[Train Candidate Model]
+    D --> E[Evaluate Candidate]
+    E --> F{Promote?}
+    F -->|Yes| G[Update Registry]
+    F -->|No| H[Archive Candidate]

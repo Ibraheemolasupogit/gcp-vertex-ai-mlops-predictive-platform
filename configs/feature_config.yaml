@@ -1,0 +1,17 @@
+# Feature engineering placeholder configuration.
+features:
+  numeric:
+    - temperature_c
+    - vibration_mm_s
+    - pressure_kpa
+    - operating_hours
+  categorical:
+    - equipment_type
+    - site_id
+
+windows:
+  rolling_mean_hours: [6, 24, 72]
+  rolling_std_hours: [24, 72]
+
+outputs:
+  feature_table_name: predictive_maintenance_features

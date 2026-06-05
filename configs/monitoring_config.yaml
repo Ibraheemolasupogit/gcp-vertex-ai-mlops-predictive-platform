@@ -1,0 +1,18 @@
+# Monitoring placeholder configuration for future drift and performance checks.
+monitoring:
+  enabled: false
+  reference_window_days: 30
+  production_window_days: 7
+
+drift:
+  numeric_method: ks_test
+  categorical_method: chi_square
+  alert_threshold: 0.05
+
+performance:
+  minimum_recall: 0.75
+  minimum_precision: 0.60
+
+gcp_mapping:
+  vertex_ai_model_monitoring: planned
+  cloud_logging_sink: planned

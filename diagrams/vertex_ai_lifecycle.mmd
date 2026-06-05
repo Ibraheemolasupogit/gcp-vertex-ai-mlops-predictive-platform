@@ -1,0 +1,7 @@
+flowchart TD
+    A[Cloud Storage Artifacts] --> B[Vertex AI Pipeline]
+    B --> C[Vertex AI Training]
+    C --> D[Model Evaluation]
+    D --> E[Vertex AI Model Registry]
+    E --> F[Batch Prediction or Endpoint]
+    F --> G[Model Monitoring]
