@@ -2,4 +2,5 @@
 set -euo pipefail
 
 PYTHON_BIN="${PYTHON:-python3}"
-PYTHONPATH=src "${PYTHON_BIN}" -m vertex_mlops_platform.cli run-all-local
+"${PYTHON_BIN}" scripts/generate_demo_data.py
+"${PYTHON_BIN}" scripts/run_data_validation.py

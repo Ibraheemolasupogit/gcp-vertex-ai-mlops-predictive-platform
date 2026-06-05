@@ -24,6 +24,7 @@ reports/*
 !data/sample/.gitkeep
 !data/sample/*.csv
 !outputs/.gitkeep
+!outputs/data_quality_summary.json
 !outputs/sample/
 !outputs/sample/.gitkeep
 !reports/.gitkeep

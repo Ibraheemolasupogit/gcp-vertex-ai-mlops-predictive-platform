@@ -1,0 +1,650 @@
+{
+  "overall_status": "passed",
+  "generated_at": "2026-06-05T03:24:28.197028+00:00",
+  "dataset_summaries": {
+    "machines": {
+      "row_count": 50,
+      "column_count": 10
+    },
+    "sensor_readings": {
+      "row_count": 18000,
+      "column_count": 9
+    },
+    "maintenance_events": {
+      "row_count": 99,
+      "column_count": 9
+    },
+    "failure_events": {
+      "row_count": 20,
+      "column_count": 8
+    }
+  },
+  "validation_checks": [
+    {
+      "dataset_name": "machines",
+      "check_name": "row_count_positive",
+      "status": "pass",
+      "severity": "critical",
+      "message": "machines contains rows.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "required_columns_present",
+      "status": "pass",
+      "severity": "critical",
+      "message": "All required columns are present.",
+      "affected_rows": null
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "machine_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "machine_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "machine_type_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "machine_type is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "installation_date_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "installation_date is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "site_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "site_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "manufacturer_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "manufacturer is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "expected_lifetime_years_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "expected_lifetime_years is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "criticality_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "criticality is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "baseline_temperature_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "baseline_temperature is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "baseline_vibration_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "baseline_vibration is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "baseline_pressure_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "baseline_pressure is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "machine_id_unique",
+      "status": "pass",
+      "severity": "critical",
+      "message": "machine_id is unique.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "no_duplicate_rows",
+      "status": "pass",
+      "severity": "medium",
+      "message": "No duplicate rows found.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "installation_date_valid",
+      "status": "pass",
+      "severity": "high",
+      "message": "installation_date contains valid dates.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "row_count_positive",
+      "status": "pass",
+      "severity": "critical",
+      "message": "sensor_readings contains rows.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "required_columns_present",
+      "status": "pass",
+      "severity": "critical",
+      "message": "All required columns are present.",
+      "affected_rows": null
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "reading_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "reading_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "machine_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "machine_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "timestamp_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "timestamp is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "temperature_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "temperature is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "vibration_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "vibration is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "pressure_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "pressure is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "runtime_hours_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "runtime_hours is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "energy_consumption_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "energy_consumption is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "operating_load_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "operating_load is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "reading_id_unique",
+      "status": "pass",
+      "severity": "critical",
+      "message": "reading_id is unique.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "no_duplicate_rows",
+      "status": "pass",
+      "severity": "medium",
+      "message": "No duplicate rows found.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "timestamp_valid",
+      "status": "pass",
+      "severity": "high",
+      "message": "timestamp contains valid dates.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "row_count_positive",
+      "status": "pass",
+      "severity": "critical",
+      "message": "maintenance_events contains rows.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "required_columns_present",
+      "status": "pass",
+      "severity": "critical",
+      "message": "All required columns are present.",
+      "affected_rows": null
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "maintenance_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "machine_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "machine_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_date_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "maintenance_date is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_type_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "maintenance_type is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "technician_team_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "technician_team is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "downtime_hours_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "downtime_hours is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "parts_replaced_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "parts_replaced is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_cost_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "maintenance_cost is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "risk_reduction_score_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "risk_reduction_score is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_id_unique",
+      "status": "pass",
+      "severity": "critical",
+      "message": "maintenance_id is unique.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "no_duplicate_rows",
+      "status": "pass",
+      "severity": "medium",
+      "message": "No duplicate rows found.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_date_valid",
+      "status": "pass",
+      "severity": "high",
+      "message": "maintenance_date contains valid dates.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "row_count_positive",
+      "status": "pass",
+      "severity": "critical",
+      "message": "failure_events contains rows.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "required_columns_present",
+      "status": "pass",
+      "severity": "critical",
+      "message": "All required columns are present.",
+      "affected_rows": null
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "failure_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "failure_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "machine_id_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "machine_id is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "failure_date_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "failure_date is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "failure_type_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "failure_type is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "severity_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "severity is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "root_cause_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "root_cause is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "downtime_hours_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "downtime_hours is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "repair_cost_not_fully_empty",
+      "status": "pass",
+      "severity": "high",
+      "message": "repair_cost is not fully empty.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "failure_id_unique",
+      "status": "pass",
+      "severity": "critical",
+      "message": "failure_id is unique.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "no_duplicate_rows",
+      "status": "pass",
+      "severity": "medium",
+      "message": "No duplicate rows found.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "failure_date_valid",
+      "status": "pass",
+      "severity": "high",
+      "message": "failure_date contains valid dates.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "expected_lifetime_years_positive",
+      "status": "pass",
+      "severity": "high",
+      "message": "expected_lifetime_years values are positive.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "baseline_temperature_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "baseline_temperature values are within 20 and 135.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "baseline_vibration_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "baseline_vibration values are within 0.1 and 18.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "baseline_pressure_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "baseline_pressure values are within 50 and 280.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "machines",
+      "check_name": "criticality_expected_values",
+      "status": "pass",
+      "severity": "high",
+      "message": "criticality contains expected values.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "machine_id_relationship_valid",
+      "status": "pass",
+      "severity": "critical",
+      "message": "All machine_id values exist in machines.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "temperature_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "temperature values are within 20 and 135.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "vibration_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "vibration values are within 0.1 and 18.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "pressure_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "pressure values are within 50 and 280.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "runtime_hours_non_negative",
+      "status": "pass",
+      "severity": "high",
+      "message": "runtime_hours values are non-negative.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "energy_consumption_non_negative",
+      "status": "pass",
+      "severity": "high",
+      "message": "energy_consumption values are non-negative.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "sensor_readings",
+      "check_name": "operating_load_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "operating_load values are within 0.25 and 1.0.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "machine_id_relationship_valid",
+      "status": "pass",
+      "severity": "critical",
+      "message": "All machine_id values exist in machines.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "downtime_hours_non_negative",
+      "status": "pass",
+      "severity": "high",
+      "message": "downtime_hours values are non-negative.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_cost_non_negative",
+      "status": "pass",
+      "severity": "high",
+      "message": "maintenance_cost values are non-negative.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "risk_reduction_score_plausible_range",
+      "status": "pass",
+      "severity": "high",
+      "message": "risk_reduction_score values are within 0.0 and 1.0.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "maintenance_events",
+      "check_name": "maintenance_type_expected_values",
+      "status": "pass",
+      "severity": "high",
+      "message": "maintenance_type contains expected values.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "machine_id_relationship_valid",
+      "status": "pass",
+      "severity": "critical",
+      "message": "All machine_id values exist in machines.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "downtime_hours_non_negative",
+      "status": "pass",
+      "severity": "high",
+      "message": "downtime_hours values are non-negative.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "repair_cost_non_negative",
+      "status": "pass",
+      "severity": "high",
+      "message": "repair_cost values are non-negative.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "severity_expected_values",
+      "status": "pass",
+      "severity": "high",
+      "message": "severity contains expected values.",
+      "affected_rows": 0
+    },
+    {
+      "dataset_name": "failure_events",
+      "check_name": "failure_type_expected_values",
+      "status": "pass",
+      "severity": "high",
+      "message": "failure_type contains expected values.",
+      "affected_rows": 0
+    }
+  ],
+  "issue_counts_by_severity": {},
+  "issue_counts_by_dataset": {}
+}

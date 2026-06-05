@@ -51,20 +51,21 @@ tests/                   Scaffold and import tests
 
 1. Repo setup and professional project scaffold
 2. Synthetic predictive maintenance data generation
-3. Local ingestion and feature engineering workflow
-4. Baseline model training and evaluation
-5. Local model registry and deployment gates
-6. Batch prediction and reporting workflow
-7. Monitoring, drift checks, and retraining recommendations
-8. Vertex AI pipeline design and cloud mapping
-9. Dashboard polish and portfolio-ready documentation
+3. Data ingestion and validation
+4. Feature engineering workflow
+5. Baseline model training and evaluation
+6. Local model registry and deployment gates
+7. Batch prediction and reporting workflow
+8. Monitoring, drift checks, and retraining recommendations
+9. Vertex AI pipeline design and cloud mapping
+10. Dashboard polish and portfolio-ready documentation
 
 ## Current Status
 
-Milestone 2 is complete with local synthetic predictive maintenance datasets.
-The data remains fully synthetic and local-first. No cloud deployment, real GCP
-resources, real equipment data, ML models, benchmarking, or credentials are
-included.
+Milestone 3 is complete with local data ingestion, validation, and a generated
+data quality summary. The datasets remain fully synthetic and local-first. No
+cloud deployment, real GCP resources, real equipment data, ML models,
+benchmarking, or credentials are included.
 
 ## Run Tests
 
