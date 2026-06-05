@@ -4,6 +4,20 @@ data:
   processed_dir: data/processed
   sample_dir: data/sample
 
+synthetic_generation:
+  random_seed: 42
+  number_of_machines: 50
+  start_date: "2024-01-01"
+  end_date: "2024-03-31"
+  reading_frequency_hours: 6
+  failure_rate: 0.22
+  maintenance_rate: 1.4
+  output_paths:
+    machines: data/sample/machines.csv
+    sensor_readings: data/sample/sensor_readings.csv
+    maintenance_events: data/sample/maintenance_events.csv
+    failure_events: data/sample/failure_events.csv
+
 schema:
   entity_id_column: equipment_id
   timestamp_column: event_timestamp

@@ -1,8 +1,10 @@
-"""Command-line placeholders for future local MLOps workflows."""
+"""Command-line entry points for local MLOps workflows."""
 
 from __future__ import annotations
 
 import argparse
+
+from vertex_mlops_platform.data_generation import generate_all_datasets
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -26,10 +28,15 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
-    """Run a safe placeholder CLI command."""
+    """Run a local workflow command."""
     args = build_parser().parse_args(argv)
+    if args.command == "generate-demo-data":
+        datasets = generate_all_datasets()
+        for name, dataframe in datasets.items():
+            print(f"Generated {len(dataframe):,} rows for {name}.")
+        return 0
+
     messages = {
-        "generate-demo-data": "Milestone 2 will generate synthetic predictive maintenance data.",
         "train": "A later milestone will run local model training and evaluation.",
         "batch-predict": "A later milestone will run batch prediction with registered models.",
         "monitor": "A later milestone will evaluate drift, quality, and retraining signals.",

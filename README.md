@@ -61,7 +61,10 @@ tests/                   Scaffold and import tests
 
 ## Current Status
 
-Milestone 1 is complete as a professional scaffold. No ML models, synthetic data, cloud deployment, benchmarking, or real credentials are included.
+Milestone 2 is complete with local synthetic predictive maintenance datasets.
+The data remains fully synthetic and local-first. No cloud deployment, real GCP
+resources, real equipment data, ML models, benchmarking, or credentials are
+included.
 
 ## Run Tests
 

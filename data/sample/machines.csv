@@ -1,0 +1,51 @@
+machine_id,machine_type,installation_date,site_id,manufacturer,expected_lifetime_years,criticality,baseline_temperature,baseline_vibration,baseline_pressure
+M0001,generator,2014-09-03,site_east,OmniWorks,14,high,89.87,5.28,141.27
+M0002,generator,2010-05-05,site_north,KineticForge,14,high,85.91,4.74,168.44
+M0003,generator,2016-02-24,site_east,KineticForge,14,high,81.57,5.11,150.79
+M0004,generator,2012-05-03,site_west,KineticForge,14,low,82.49,5.37,158.52
+M0005,conveyor,2016-04-17,site_north,Northline Systems,15,medium,49.19,2.56,107.21
+M0006,compressor,2014-04-26,site_west,Northline Systems,10,medium,80.88,4.7,203.6
+M0007,generator,2010-10-26,site_east,KineticForge,14,medium,88.8,4.8,162.23
+M0008,generator,2018-04-12,site_west,KineticForge,14,high,87.15,5.2,160.65
+M0009,generator,2019-10-08,site_west,Apex Industrial,14,high,83.57,4.81,157.36
+M0010,conveyor,2021-11-06,site_east,OmniWorks,15,medium,43.15,2.45,95.93
+M0011,compressor,2017-10-13,site_north,KineticForge,10,medium,75.84,4.63,202.65
+M0012,pump,2013-09-11,site_north,OmniWorks,12,high,63.85,3.23,151.01
+M0013,generator,2017-12-26,site_east,Apex Industrial,14,high,88.36,4.8,156.51
+M0014,conveyor,2022-03-16,site_east,OmniWorks,15,medium,46.65,2.5,97.74
+M0015,compressor,2021-03-29,site_south,Northline Systems,10,critical,77.63,3.95,187.2
+M0016,hydraulic_press,2022-04-09,site_south,KineticForge,11,high,66.2,3.71,247.93
+M0017,conveyor,2012-10-29,site_south,OmniWorks,15,medium,45.26,2.45,99.79
+M0018,conveyor,2020-07-29,site_east,OmniWorks,15,medium,46.29,2.28,95.41
+M0019,conveyor,2021-06-23,site_east,KineticForge,15,medium,47.31,2.35,96.02
+M0020,compressor,2023-02-11,site_west,Apex Industrial,10,critical,79.67,4.79,190.38
+M0021,conveyor,2017-01-10,site_south,Northline Systems,15,high,49.83,2.47,86.62
+M0022,pump,2017-12-18,site_north,OmniWorks,12,medium,69.43,3.76,148.61
+M0023,compressor,2014-06-13,site_south,Northline Systems,10,critical,76.06,4.24,203.27
+M0024,pump,2014-01-03,site_north,Northline Systems,12,high,58.15,2.88,140.77
+M0025,generator,2010-11-02,site_west,Apex Industrial,14,medium,91.07,4.85,148.62
+M0026,compressor,2023-02-26,site_south,KineticForge,10,medium,74.16,4.62,193.89
+M0027,conveyor,2010-05-20,site_south,Northline Systems,15,critical,46.11,2.57,92.41
+M0028,hydraulic_press,2018-12-10,site_north,OmniWorks,11,medium,76.63,3.84,228.36
+M0029,generator,2018-12-24,site_west,Northline Systems,14,critical,91.71,5.13,174.74
+M0030,compressor,2021-01-06,site_west,Apex Industrial,10,high,85.73,4.86,202.79
+M0031,hydraulic_press,2023-01-15,site_north,Northline Systems,11,low,66.24,3.95,224.55
+M0032,pump,2017-10-01,site_central,Apex Industrial,12,medium,67.24,3.22,150.6
+M0033,generator,2013-03-02,site_east,Apex Industrial,14,low,81.47,4.9,168.79
+M0034,pump,2015-01-05,site_north,Northline Systems,12,high,63.82,3.11,142.15
+M0035,hydraulic_press,2018-01-14,site_south,Apex Industrial,11,low,67.08,3.75,233.35
+M0036,pump,2016-03-21,site_north,KineticForge,12,high,62.85,3.68,161.33
+M0037,conveyor,2014-04-25,site_west,Northline Systems,15,medium,48.91,2.68,90.84
+M0038,conveyor,2011-12-16,site_north,OmniWorks,15,critical,44.94,2.42,90.0
+M0039,conveyor,2015-10-24,site_south,KineticForge,15,low,44.29,2.34,105.47
+M0040,conveyor,2021-12-25,site_central,Apex Industrial,15,critical,48.98,2.76,89.37
+M0041,pump,2021-09-19,site_south,OmniWorks,12,low,61.5,2.94,142.93
+M0042,pump,2022-11-15,site_central,Northline Systems,12,medium,63.75,3.39,146.35
+M0043,hydraulic_press,2015-03-10,site_central,OmniWorks,11,medium,71.33,3.78,258.89
+M0044,pump,2016-12-09,site_east,KineticForge,12,low,57.86,3.43,147.29
+M0045,hydraulic_press,2015-02-07,site_central,OmniWorks,11,high,65.34,3.69,233.64
+M0046,pump,2016-02-14,site_central,Northline Systems,12,medium,61.06,3.23,157.8
+M0047,conveyor,2019-11-21,site_south,OmniWorks,15,medium,46.93,2.24,96.87
+M0048,compressor,2021-04-19,site_south,Northline Systems,10,critical,76.46,4.38,192.05
+M0049,hydraulic_press,2014-07-17,site_east,Northline Systems,11,high,74.95,3.9,254.07
+M0050,conveyor,2014-01-18,site_north,Apex Industrial,15,high,48.19,2.4,100.64
