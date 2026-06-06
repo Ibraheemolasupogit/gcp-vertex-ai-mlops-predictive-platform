@@ -24,6 +24,7 @@ reports/*
 !data/processed/feature_table.csv
 !data/sample/.gitkeep
 !data/sample/*.csv
+!data/sample/prediction_request.json
 !outputs/.gitkeep
 !outputs/data_quality_summary.json
 !outputs/feature_store_metadata.json
