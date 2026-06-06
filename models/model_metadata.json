@@ -110,7 +110,7 @@
     "recent_maintenance_flag"
   ],
   "model_artifact_path": "models/predictive_maintenance_model.joblib",
-  "trained_at": "2026-06-06T00:54:26.738517+00:00",
+  "trained_at": "2026-06-06T11:30:50.109533+00:00",
   "training_data_path": "data/processed/feature_table.csv",
   "metrics_path": "outputs/model_metrics.json",
   "feature_table_path": "data/processed/feature_table.csv",

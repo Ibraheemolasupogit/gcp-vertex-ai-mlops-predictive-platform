@@ -21,15 +21,16 @@ The repository currently implements a local-first ML workflow:
 - Model artifact, metrics, feature importance, and evaluation report
 - Deployment approval gates with readiness status
 - Serving-ready model metadata and local prediction utilities
+- Local FastAPI serving API with health, single prediction, and batch prediction
 - Tests for data generation, validation, features, training, and gates
 
 No model is deployed. No GCP resources, credentials, secrets, service account
 keys, or real project IDs are included.
 
-R2 status: the local model artifact structure is prepared for serving with
-`models/model_metadata.json`, reusable prediction utilities, and a local
-prediction smoke script. No API, Docker image, Cloud Run service, or GCP
-deployment has been added yet.
+R3 status: a local FastAPI serving API has been added with `/health`, `/predict`,
+and `/predict-batch` endpoints plus API tests and example requests. No Docker
+image, Cloud Run service, Cloud Build configuration, or GCP deployment has been
+added yet.
 
 ## Course-Aligned Objective
 
