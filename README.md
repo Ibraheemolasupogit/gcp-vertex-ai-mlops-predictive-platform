@@ -76,6 +76,11 @@ with a DAG skeleton, config templates, dry-run DAG validation helper, and
 Composer evidence folder. No Composer deployment, DAG run, credentials, or real
 project IDs are included.
 
+R13 status: Vertex AI Pipelines / Kubeflow design has been added with a pipeline
+skeleton, component mapping, config template, dry-run validation and compile
+helpers, and pipeline evidence folder. No real pipeline run, credentials, or
+real project IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

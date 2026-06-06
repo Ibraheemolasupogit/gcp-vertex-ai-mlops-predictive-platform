@@ -1,0 +1,26 @@
+# Template only. Placeholder config for a future Vertex AI Pipeline run.
+
+pipeline:
+  name: predictive-maintenance-mlops-pipeline
+  pipeline_root: gs://your-pipeline-root-bucket/pipelines
+  project_id: your-gcp-project-id
+  region: europe-west2
+  service_account: your-pipeline-service-account@your-project.iam.gserviceaccount.com
+
+inputs:
+  feature_table_uri: gs://your-bucket/data/feature_table.csv
+  model_output_uri: gs://your-bucket/models/predictive-maintenance/
+
+model:
+  display_name: predictive-maintenance-model
+  candidate_alias: candidate
+
+approval_thresholds:
+  minimum_f1: 0.80
+  minimum_recall: 0.80
+
+labels:
+  workload: predictive-maintenance
+  orchestrator: vertex-ai-pipelines
+  data_type: synthetic
+  stage: candidate

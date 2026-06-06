@@ -102,6 +102,17 @@ secrets, service account keys, or real project IDs to the repository.
 - Approval gate task completed.
 - Model registration task completed.
 - DAG logs captured.
+- R13 Vertex AI Pipeline job created.
+- Pipeline graph captured.
+- Validation component completed.
+- Feature engineering component completed.
+- Training component completed.
+- Evaluation component completed.
+- Approval gate component completed.
+- Model registration component completed.
+- Pipeline artifacts captured.
+- Pipeline logs captured.
+- Model Registry candidate linked to pipeline.
 - Cloud Composer / Airflow DAG design or screenshot if implemented.
 - Vertex AI Pipeline / Kubeflow pipeline design or screenshot if implemented.
 
