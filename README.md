@@ -22,6 +22,7 @@ The repository currently implements a local-first ML workflow:
 - Deployment approval gates with readiness status
 - Serving-ready model metadata and local prediction utilities
 - Local FastAPI serving API with health, single prediction, and batch prediction
+- Dockerfile and local Docker helper scripts for the serving API
 - Tests for data generation, validation, features, training, and gates
 
 No model is deployed. No GCP resources, credentials, secrets, service account
@@ -31,6 +32,10 @@ R3 status: a local FastAPI serving API has been added with `/health`, `/predict`
 and `/predict-batch` endpoints plus API tests and example requests. No Docker
 image, Cloud Run service, Cloud Build configuration, or GCP deployment has been
 added yet.
+
+R4 status: the FastAPI API is containerized with a Cloud Run-style port `8080`,
+plus local Docker build, run, and smoke-test scripts. No Artifact Registry,
+Cloud Run, Cloud Build, GitHub trigger, or GCP deployment has been added yet.
 
 ## Course-Aligned Objective
 
