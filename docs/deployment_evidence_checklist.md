@@ -5,6 +5,15 @@ secrets, service account keys, or real project IDs to the repository.
 
 ## Cloud Run And CI/CD
 
+- R5 `deployment/env.example` used with placeholders replaced locally.
+- Artifact Registry repository created.
+- Docker image pushed to Artifact Registry.
+- Cloud Run service deployed.
+- Cloud Run service URL captured.
+- `/health` endpoint response screenshot.
+- `/predict` endpoint response screenshot.
+- Cloud Logging entry screenshot.
+- Cleanup evidence if resources are removed after demonstration.
 - Cloud Build successful run.
 - Artifact Registry image and digest.
 - Cloud Run service.

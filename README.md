@@ -37,6 +37,11 @@ R4 status: the FastAPI API is containerized with a Cloud Run-style port `8080`,
 plus local Docker build, run, and smoke-test scripts. No Artifact Registry,
 Cloud Run, Cloud Build, GitHub trigger, or GCP deployment has been added yet.
 
+R5 status: a manual Artifact Registry and Cloud Run deployment guide has been
+added with parameterized deployment scripts and an evidence folder. No Cloud
+Build, GitHub trigger, traffic splitting, Vertex AI deployment, real
+credentials, or real project IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence
