@@ -1,88 +1,103 @@
 # GCP Vertex AI MLOps Predictive Platform
 
-A local-first MLOps scaffold for a predictive maintenance platform designed to map cleanly to GCP Vertex AI services in later milestones.
+A production-style GCP MLOps predictive maintenance platform showing the journey
+from local ML development to containerized serving, CI/CD, Cloud Run deployment
+evidence, and Vertex AI lifecycle design.
 
-## Problem Statement
+## Purpose
 
-Industrial equipment failures are costly, disruptive, and often preventable when telemetry, maintenance history, and model feedback are managed through a reliable ML lifecycle. This project is structured around a predictive maintenance use case where future milestones will generate equipment telemetry, train failure-risk models, register candidate models, run batch predictions, monitor model quality, and recommend retraining when drift or performance degradation is detected.
+This project uses a predictive maintenance theme to demonstrate practical MLOps
+engineering: synthetic equipment telemetry, local model development, governance
+checks, and a planned deployment evidence path aligned with real GCP services.
 
-## Why This Project Matters
+## Current Status
 
-Predictive maintenance is a practical business theme for demonstrating end-to-end MLOps. It connects measurable operational outcomes, such as downtime reduction and maintenance planning, with engineering concerns like reproducible pipelines, model governance, monitoring, and deployment gates.
+The repository currently implements a local-first ML workflow:
 
-## Local-First Approach
+- Synthetic predictive maintenance datasets
+- Data ingestion and validation
+- Feature engineering and local feature-store-style metadata
+- RandomForest model training and evaluation
+- Model artifact, metrics, feature importance, and evaluation report
+- Deployment approval gates with readiness status
+- Tests for data generation, validation, features, training, and gates
 
-Milestone 1 keeps the repository runnable without GCP credentials, cloud resources, secrets, or deployment steps. The scaffold is organized so local scripts and tests can evolve into cloud-backed workflows while preserving clear boundaries between data generation, ingestion, feature engineering, training, registry, prediction, monitoring, serving, and reporting.
+No model is deployed. No GCP resources, credentials, secrets, service account
+keys, or real project IDs are included.
 
-## Planned GCP Mapping
+## Course-Aligned Objective
 
-The future architecture is intended to map local components to managed GCP services:
+The realigned objective is to build a stronger practical GCP deployment evidence
+path:
 
-- Cloud Storage for raw, processed, and model artifact storage
-- BigQuery for feature tables, training views, monitoring queries, and analytics
-- Pub/Sub for event-driven data and monitoring notifications
-- Dataflow for scalable ingestion and transformation workloads
-- Vertex AI Pipelines for orchestrated ML workflows
-- Vertex AI Training for managed model training jobs
-- Vertex AI Model Registry for model versioning and approval metadata
-- Vertex AI Batch Prediction for scheduled scoring jobs
-- Vertex AI Endpoint or Cloud Run for serving selected model versions
-- Vertex AI Model Monitoring for drift and skew detection
-- Cloud Logging and Cloud Monitoring for operational telemetry
+1. Local model artifact and serving-ready package
+2. FastAPI or Flask prediction API
+3. Dockerized serving container
+4. Artifact Registry and manual Cloud Run deployment guide
+5. Cloud Build CI/CD and GitHub trigger
+6. Cloud Run revisions and traffic splitting evidence
+7. Vertex AI custom training, Model Registry, endpoints, online prediction, and
+   batch prediction
+8. Cloud Composer / Airflow and Vertex AI Pipelines design
+9. Explainability, logging, monitoring, screenshots, and final portfolio polish
+
+## Architecture Overview
+
+```text
+Synthetic data -> validation -> feature table -> local training
+      -> metrics/report -> approval gates -> serving-ready model bundle
+      -> API -> Docker -> Artifact Registry -> Cloud Run
+      -> Cloud Build/GitHub trigger -> Vertex AI lifecycle design
+```
 
 ## Repository Structure
 
 ```text
-configs/                 Configuration placeholders for pipeline, data, features, models, monitoring, and deployment gates
-dashboard/               Placeholder Streamlit dashboard entrypoint
-data/                    Local raw, processed, and sample data directories
-diagrams/                Mermaid diagrams for architecture and lifecycle workflows
-docs/                    Concise design notes for architecture, lifecycle, registry, monitoring, deployment, and limitations
-outputs/                 Local output artifacts from future runs
-pipelines/               Local and Vertex AI pipeline design placeholders
-reports/                 Local report artifacts from future analysis
-scripts/                 Safe placeholder automation scripts
-sql/                     BigQuery-oriented SQL placeholders
-src/vertex_mlops_platform/ Python package skeleton
-tests/                   Scaffold and import tests
+configs/                  Local configuration for data, features, models, and gates
+data/                     Synthetic sample and processed feature data
+docs/                     Architecture, data, training, deployment, and realignment docs
+models/                   Local trained model artifact
+outputs/                  Metrics, feature metadata, and gate results
+reports/                  Evaluation and readiness reports
+scripts/                  Local workflow scripts
+src/vertex_mlops_platform/ Python package for data, features, training, and future serving
+tests/                    Unit tests for implemented workflow stages
 ```
 
-## Milestone Roadmap
-
-1. Repo setup and professional project scaffold
-2. Synthetic predictive maintenance data generation
-3. Data ingestion and validation
-4. Feature engineering workflow
-5. Baseline model training and evaluation
-6. Local model registry and deployment gates
-7. Batch prediction and reporting workflow
-8. Monitoring, drift checks, and retraining recommendations
-9. Vertex AI pipeline design and cloud mapping
-10. Dashboard polish and portfolio-ready documentation
-
-## Current Status
-
-Milestone 6 is complete with local deployment approval gates. The project now
-generates a model readiness decision and deployment readiness report from local
-synthetic artifacts. No real deployment, model registry, GCP resources, real
-equipment data, benchmarking suite, or credentials are included.
-
-## Run Tests
+## Run Local Workflow
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-pytest
+python3 scripts/generate_demo_data.py
+python3 scripts/run_data_validation.py
+python3 scripts/run_feature_engineering.py
+python3 scripts/run_training_pipeline.py
+python3 scripts/run_approval_gates.py
 ```
 
-You can also run the configured checks with:
+Or run the implemented local chain:
 
 ```bash
-make test
-make lint
+scripts/run_all_local.sh
 ```
 
-## Portfolio Positioning
+## Run Checks
 
-This repository is intended to show structured MLOps engineering judgment: clean project boundaries, local reproducibility, responsible configuration placeholders, and a clear path from local workflows to managed GCP services. It avoids fake production claims and leaves implementation details for the appropriate milestones.
+```bash
+python3 -m pytest
+python3 -m ruff check .
+```
+
+## Deployment Evidence Plan
+
+Future milestones will capture Cloud Build runs, Artifact Registry images,
+Cloud Run service URLs, `/health` and `/predict` responses, Cloud Run revisions,
+traffic splitting, Vertex AI training jobs, Model Registry entries, endpoint
+predictions, batch predictions, logs, metrics, explainability outputs, and final
+architecture diagrams.
+
+## Safety Note
+
+This repository is intentionally local-first until explicit deployment
+milestones. It must not contain credentials, secrets, service account keys, or
+hard-coded real GCP project IDs. Synthetic data and local metrics are portfolio
+workflow evidence, not production performance claims.
