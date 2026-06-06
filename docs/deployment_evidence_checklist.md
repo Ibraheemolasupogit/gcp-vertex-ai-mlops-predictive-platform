@@ -118,12 +118,21 @@ secrets, service account keys, or real project IDs to the repository.
 
 ## Observability And Explainability
 
+- R14 feature importance explainability documented.
+- Local monitoring summary generated.
+- Model versioning strategy documented.
+- Screenshot evidence guide completed.
+- Final portfolio architecture documented.
 - Cloud Logging entries for serving requests.
 - Cloud Monitoring metrics for Cloud Run or endpoint behavior.
 - Explainability output.
 
 ## Final Portfolio Evidence
 
+- Evidence folder index completed.
+- Repository health check documented.
+- README polished for portfolio presentation.
+- No fake screenshots committed.
 - Final architecture diagram.
 - README screenshots section.
 - Deployment command transcript with project IDs redacted or parameterized.

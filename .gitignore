@@ -30,6 +30,7 @@ reports/*
 !outputs/model_metrics.json
 !outputs/feature_importance.csv
 !outputs/deployment_gate_results.json
+!outputs/monitoring_summary.json
 !outputs/sample/
 !outputs/sample/.gitkeep
 !reports/.gitkeep

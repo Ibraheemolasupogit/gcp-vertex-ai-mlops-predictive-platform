@@ -1,126 +1,77 @@
 # GCP Vertex AI MLOps Predictive Platform
 
-A production-style GCP MLOps predictive maintenance platform showing the journey
-from local ML development to containerized serving, CI/CD, Cloud Run deployment
-evidence, and Vertex AI lifecycle design.
+A local-first predictive maintenance MLOps platform that demonstrates the path
+from model development to containerised serving, CI/CD readiness, Cloud Run
+release management, and Vertex AI lifecycle design.
 
-## Purpose
+## Problem Statement
 
-This project uses a predictive maintenance theme to demonstrate practical MLOps
-engineering: synthetic equipment telemetry, local model development, governance
-checks, and a planned deployment evidence path aligned with real GCP services.
+Industrial maintenance teams need earlier warning signals for machine failure so
+they can reduce unplanned downtime, prioritise inspections, and make better use
+of maintenance resources. This project uses fully synthetic machine telemetry to
+model that workflow without exposing real operational data.
 
-## Current Status
+## What This Project Demonstrates
 
-The repository currently implements a local-first ML workflow:
-
-- Synthetic predictive maintenance datasets
-- Data ingestion and validation
-- Feature engineering and local feature-store-style metadata
-- RandomForest model training and evaluation
-- Model artifact, metrics, feature importance, and evaluation report
-- Deployment approval gates with readiness status
-- Serving-ready model metadata and local prediction utilities
-- Local FastAPI serving API with health, single prediction, and batch prediction
-- Dockerfile and local Docker helper scripts for the serving API
-- Tests for data generation, validation, features, training, and gates
-
-No model is deployed. No GCP resources, credentials, secrets, service account
-keys, or real project IDs are included.
-
-R3 status: a local FastAPI serving API has been added with `/health`, `/predict`,
-and `/predict-batch` endpoints plus API tests and example requests. No Docker
-image, Cloud Run service, Cloud Build configuration, or GCP deployment has been
-added yet.
-
-R4 status: the FastAPI API is containerized with a Cloud Run-style port `8080`,
-plus local Docker build, run, and smoke-test scripts. No Artifact Registry,
-Cloud Run, Cloud Build, GitHub trigger, or GCP deployment has been added yet.
-
-R5 status: a manual Artifact Registry and Cloud Run deployment guide has been
-added with parameterized deployment scripts and an evidence folder. No Cloud
-Build, GitHub trigger, traffic splitting, Vertex AI deployment, real
-credentials, or real project IDs are included.
-
-R6 status: Cloud Build CI/CD configuration has been added for build, push, and
-Cloud Run deploy using parameterized substitutions, plus a manual submit helper.
-No GitHub trigger, traffic splitting, Vertex AI deployment, credentials, or real
-project IDs are included.
-
-R7 status: the GitHub-triggered Cloud Build deployment path is documented with a
-trigger template, dry-run trigger helper, and trigger evidence folder. No real
-trigger was created, and no traffic splitting, Vertex AI deployment,
-credentials, or real project IDs are included.
-
-R8 status: Cloud Run revision and traffic splitting workflow documentation,
-dry-run traffic helpers, and traffic-splitting evidence placeholders have been
-added. No live traffic split, Vertex AI deployment, credentials, or real project
-IDs are included.
-
-R9 status: Vertex AI custom training and Model Registry mapping has been added
-with dry-run helper scripts, templates, and an evidence folder. No real Vertex
-AI jobs, endpoint deployment, credentials, or real project IDs are included.
-
-R10 status: Vertex AI endpoint deployment mapping, online prediction readiness,
-and batch prediction readiness have been added with dry-run helper scripts and
-an endpoint evidence folder. No real endpoint, prediction job, credentials, or
-real project IDs are included.
-
-R11 status: Cloud Run-to-Vertex AI proxy design has been added with proxy
-configuration, a Vertex AI client stub, request/response transformation examples,
-and evidence planning. The local API remains the default path; no live Vertex AI
-call, deployment, or credentials are included.
-
-R12 status: Cloud Composer / Airflow continuous training design has been added
-with a DAG skeleton, config templates, dry-run DAG validation helper, and
-Composer evidence folder. No Composer deployment, DAG run, credentials, or real
-project IDs are included.
-
-R13 status: Vertex AI Pipelines / Kubeflow design has been added with a pipeline
-skeleton, component mapping, config template, dry-run validation and compile
-helpers, and pipeline evidence folder. No real pipeline run, credentials, or
-real project IDs are included.
-
-## Course-Aligned Objective
-
-The realigned objective is to build a stronger practical GCP deployment evidence
-path:
-
-1. Local model artifact and serving-ready package
-2. FastAPI or Flask prediction API
-3. Dockerized serving container
-4. Artifact Registry and manual Cloud Run deployment guide
-5. Cloud Build CI/CD and GitHub trigger
-6. Cloud Run revisions and traffic splitting evidence
-7. Vertex AI custom training, Model Registry, endpoints, online prediction, and
-   batch prediction
-8. Cloud Composer / Airflow and Vertex AI Pipelines design
-9. Explainability, logging, monitoring, screenshots, and final portfolio polish
+- Synthetic predictive maintenance data generation.
+- Data ingestion, validation, and quality summaries.
+- Feature engineering for sensor, rolling-window, lifecycle, and maintenance
+  history features.
+- Local model training, evaluation, feature importance, and approval gates.
+- FastAPI prediction service with local model serving and future Vertex AI proxy
+  mode.
+- Docker, Artifact Registry, Cloud Run, Cloud Build, and GitHub-triggered
+  deployment readiness.
+- Cloud Run revisions, traffic splitting, and rollback evidence planning.
+- Vertex AI custom training, Model Registry, endpoint, online prediction, and
+  batch prediction mapping.
+- Cloud Composer / Airflow and Vertex AI Pipelines / Kubeflow orchestration
+  design.
+- Explainability, monitoring, model versioning, and evidence organisation docs.
 
 ## Architecture Overview
 
 ```text
-Synthetic data -> validation -> feature table -> local training
-      -> metrics/report -> approval gates -> serving-ready model bundle
-      -> API -> Docker -> Artifact Registry -> Cloud Run
-      -> Cloud Build/GitHub trigger -> Vertex AI lifecycle design
+Synthetic data
+  -> validation
+  -> feature engineering
+  -> local training and evaluation
+  -> approval gates
+  -> model metadata and serving utilities
+  -> FastAPI API
+  -> Docker / Artifact Registry / Cloud Run readiness
+  -> Cloud Build and GitHub trigger readiness
+  -> Vertex AI training, registry, endpoint, and pipeline mapping
 ```
 
-## Repository Structure
+The repository is intentionally local-first. GCP deployment files are
+parameterised templates, dry-run helpers, and documentation until a user chooses
+to run them in their own GCP project.
 
-```text
-configs/                  Local configuration for data, features, models, and gates
-data/                     Synthetic sample and processed feature data
-docs/                     Architecture, data, training, deployment, and realignment docs
-models/                   Local trained model artifact
-outputs/                  Metrics, feature metadata, and gate results
-reports/                  Evaluation and readiness reports
-scripts/                  Local workflow scripts
-src/vertex_mlops_platform/ Python package for data, features, training, and future serving
-tests/                    Unit tests for implemented workflow stages
+## Implemented Capabilities
+
+| Area | Status |
+| --- | --- |
+| Data generation | Synthetic machine, sensor, maintenance, and failure datasets |
+| Data validation | Schema checks, relationship checks, data quality JSON summary |
+| Feature engineering | Model-ready feature table and local feature-store metadata |
+| Training | RandomForest classifier trained locally |
+| Evaluation | Metrics, confusion matrix, baseline comparison, feature importance |
+| Governance | Deployment approval gate report with Ready / Review / Blocked logic |
+| Serving | Local FastAPI `/health`, `/predict`, and `/predict-batch` endpoints |
+| Containerisation | Dockerfile and local Docker helper scripts |
+| CI/CD readiness | Cloud Build config and GitHub trigger templates |
+| GCP lifecycle mapping | Cloud Run, Vertex AI, Composer, and pipeline design artifacts |
+
+## Local Run Instructions
+
+Run the local workflow end to end:
+
+```bash
+scripts/run_all_local.sh
 ```
 
-## Run Local Workflow
+Or run stages individually:
 
 ```bash
 python3 scripts/generate_demo_data.py
@@ -128,32 +79,99 @@ python3 scripts/run_data_validation.py
 python3 scripts/run_feature_engineering.py
 python3 scripts/run_training_pipeline.py
 python3 scripts/run_approval_gates.py
+python3 scripts/run_local_prediction.py
+python3 scripts/generate_monitoring_summary.py
 ```
 
-Or run the implemented local chain:
-
-```bash
-scripts/run_all_local.sh
-```
-
-## Run Checks
+Run repository checks:
 
 ```bash
 python3 -m pytest
 python3 -m ruff check .
 ```
 
-## Deployment Evidence Plan
+## API Usage Summary
 
-Future milestones will capture Cloud Build runs, Artifact Registry images,
-Cloud Run service URLs, `/health` and `/predict` responses, Cloud Run revisions,
-traffic splitting, Vertex AI training jobs, Model Registry entries, endpoint
-predictions, batch predictions, logs, metrics, explainability outputs, and final
-architecture diagrams.
+Start the local API:
 
-## Safety Note
+```bash
+python3 scripts/run_api_local.py
+```
 
-This repository is intentionally local-first until explicit deployment
-milestones. It must not contain credentials, secrets, service account keys, or
-hard-coded real GCP project IDs. Synthetic data and local metrics are portfolio
-workflow evidence, not production performance claims.
+Key endpoints:
+
+- `GET /`
+- `GET /health`
+- `POST /predict`
+- `POST /predict-batch`
+
+Example request payloads are available in `examples/`.
+
+## Docker Summary
+
+The Docker setup packages the FastAPI service for local container testing and
+future Cloud Run deployment:
+
+```bash
+bash scripts/docker_build_local.sh
+bash scripts/docker_run_local.sh
+bash scripts/docker_test_local.sh
+```
+
+Docker runtime testing requires Docker to be available locally.
+
+## GCP Deployment Evidence Path
+
+The repository includes parameterised guides and dry-run helpers for:
+
+- Artifact Registry and manual Cloud Run deployment.
+- Cloud Build CI/CD.
+- GitHub-triggered Cloud Build.
+- Cloud Run revisions and traffic splitting.
+- Cloud Run API proxy design in front of Vertex AI.
+
+See [docs/deployment_evidence_checklist.md](docs/deployment_evidence_checklist.md)
+and [docs/screenshot_evidence_guide.md](docs/screenshot_evidence_guide.md).
+
+## Vertex AI Lifecycle Mapping
+
+The Vertex AI design layer covers:
+
+- Custom training.
+- Model Registry metadata and versioning.
+- Endpoint deployment readiness.
+- Online prediction and batch prediction readiness.
+- Cloud Composer / Airflow continuous training design.
+- Vertex AI Pipelines / Kubeflow component design.
+
+These are documented as safe templates and design artifacts. They do not submit
+real jobs or create cloud resources.
+
+## Evidence
+
+Evidence folders are indexed in [evidence/README.md](evidence/README.md).
+Screenshots should be captured only after real deployment runs in a user-owned
+GCP project. Fake screenshots, credentials, service account keys, and unredacted
+secrets should not be committed.
+
+## Current Status
+
+This project is ready as a local-first GCP MLOps portfolio repository. It
+contains working local ML functionality, serving utilities, tests, deployment
+readiness templates, orchestration design, and documentation for evidence
+capture.
+
+## Limitations
+
+- Data is synthetic.
+- Metrics are local workflow evidence, not production performance claims.
+- No real GCP resources are created by this repository by default.
+- Deployment scripts are parameterised and should be reviewed before use.
+- Real screenshots and cloud evidence must be captured manually after running
+  the deployment path in a user-owned GCP project.
+
+## Portfolio Positioning
+
+This repository presents a practical MLOps engineering workflow: build locally,
+test locally, containerise serving, prepare CI/CD, map the model lifecycle to GCP
+services, and organise evidence without overstating production deployment.

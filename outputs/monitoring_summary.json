@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-06-06T18:45:33.959095+00:00",
+  "data_quality_status": "passed",
+  "model_metrics_summary": {
+    "accuracy": 0.9971111111111111,
+    "precision": 0.9568345323741008,
+    "recall": 0.95,
+    "f1": 0.953405017921147,
+    "roc_auc": 0.9997673656618611,
+    "positive_class_rate": 0.03111111111111111
+  },
+  "approval_status": "Review",
+  "feature_table_metadata": {
+    "row_count": 18000,
+    "feature_count": 51,
+    "feature_version": "v1",
+    "entity_keys": [
+      "machine_id"
+    ],
+    "timestamp_key": "timestamp"
+  },
+  "recommended_monitoring_signals": [
+    "request_count",
+    "latency",
+    "error_rate",
+    "prediction_volume",
+    "prediction_distribution",
+    "risk_band_distribution",
+    "input_feature_drift",
+    "data_quality_failures",
+    "approval_gate_status",
+    "retraining_trigger_events"
+  ],
+  "local_only_notice": "Local monitoring summary only. No Cloud Run, Vertex AI, or GCP monitoring resources are queried."
+}
