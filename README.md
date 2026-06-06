@@ -52,6 +52,11 @@ trigger template, dry-run trigger helper, and trigger evidence folder. No real
 trigger was created, and no traffic splitting, Vertex AI deployment,
 credentials, or real project IDs are included.
 
+R8 status: Cloud Run revision and traffic splitting workflow documentation,
+dry-run traffic helpers, and traffic-splitting evidence placeholders have been
+added. No live traffic split, Vertex AI deployment, credentials, or real project
+IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

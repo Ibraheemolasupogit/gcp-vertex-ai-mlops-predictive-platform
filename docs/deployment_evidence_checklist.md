@@ -32,6 +32,16 @@ secrets, service account keys, or real project IDs to the repository.
 - Cloud Run revision updated from trigger.
 - `/health` endpoint works after triggered deployment.
 - `/predict` endpoint works after triggered deployment.
+- R8 Cloud Run revisions visible.
+- Stable revision identified.
+- Candidate revision identified.
+- Traffic split configured.
+- 90/10 or similar canary split captured.
+- `/health` endpoint checked during split.
+- `/predict` endpoint checked during split.
+- Cloud Logging confirms traffic reaching service.
+- Rollback evidence captured.
+- Monitoring chart captured if available.
 - Cloud Build successful run.
 - Artifact Registry image and digest.
 - Cloud Run service.
