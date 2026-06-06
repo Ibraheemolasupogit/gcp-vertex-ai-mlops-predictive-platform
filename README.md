@@ -71,6 +71,11 @@ configuration, a Vertex AI client stub, request/response transformation examples
 and evidence planning. The local API remains the default path; no live Vertex AI
 call, deployment, or credentials are included.
 
+R12 status: Cloud Composer / Airflow continuous training design has been added
+with a DAG skeleton, config templates, dry-run DAG validation helper, and
+Composer evidence folder. No Composer deployment, DAG run, credentials, or real
+project IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

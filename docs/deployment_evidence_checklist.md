@@ -91,6 +91,17 @@ secrets, service account keys, or real project IDs to the repository.
 
 ## Orchestration
 
+- R12 Cloud Composer environment created.
+- DAG uploaded.
+- DAG graph view captured.
+- DAG run executed.
+- Validation task success.
+- Feature engineering task success.
+- Vertex AI training task triggered.
+- Metrics collection task completed.
+- Approval gate task completed.
+- Model registration task completed.
+- DAG logs captured.
 - Cloud Composer / Airflow DAG design or screenshot if implemented.
 - Vertex AI Pipeline / Kubeflow pipeline design or screenshot if implemented.
 

@@ -1,0 +1,37 @@
+# Template only. Placeholder configuration for the future Cloud Composer DAG.
+
+dag:
+  name: predictive_maintenance_continuous_training
+  schedule: "0 6 * * 1"
+  owner: mlops-platform
+  retries: 1
+
+data_sources:
+  raw_data_uri: gs://your-bucket/data/raw/
+  feature_table_uri: gs://your-bucket/data/feature_table.csv
+  validation_summary_uri: gs://your-bucket/outputs/data_quality_summary.json
+
+vertex_ai_training:
+  project_id: your-gcp-project-id
+  region: europe-west2
+  staging_bucket: gs://your-vertex-staging-bucket
+  training_job_name: predictive-maintenance-training
+  model_output_uri: gs://your-bucket/models/predictive-maintenance/
+  machine_type: n1-standard-4
+
+model_registry:
+  model_display_name: predictive-maintenance-model
+  candidate_alias: candidate
+  labels:
+    workload: predictive-maintenance
+    stage: candidate
+    data_type: synthetic
+
+approval_thresholds:
+  minimum_f1: 0.80
+  minimum_recall: 0.80
+
+notifications:
+  reviewer_channel: notification-channel-placeholder
+  send_on_success: true
+  send_on_failure: true
