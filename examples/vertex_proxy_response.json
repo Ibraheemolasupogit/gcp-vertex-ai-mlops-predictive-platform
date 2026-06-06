@@ -1,0 +1,22 @@
+{
+  "vertex_ai_response": {
+    "predictions": [
+      {
+        "prediction_class": 1,
+        "prediction_probability": 0.68,
+        "risk_band": "high"
+      }
+    ],
+    "deployedModelId": "deployed-model-placeholder"
+  },
+  "normalised_cloud_run_response": {
+    "prediction_class": 1,
+    "prediction_probability": 0.68,
+    "risk_band": "high",
+    "model_name": "vertex-ai-endpoint",
+    "model_version": "vertex-proxy",
+    "request_id": "generated-request-id",
+    "timestamp": "generated-timestamp",
+    "local_only_notice": "Local development service only. No GCP resources, credentials, or deployment are used."
+  }
+}

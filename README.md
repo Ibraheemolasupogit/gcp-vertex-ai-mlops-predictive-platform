@@ -66,6 +66,11 @@ and batch prediction readiness have been added with dry-run helper scripts and
 an endpoint evidence folder. No real endpoint, prediction job, credentials, or
 real project IDs are included.
 
+R11 status: Cloud Run-to-Vertex AI proxy design has been added with proxy
+configuration, a Vertex AI client stub, request/response transformation examples,
+and evidence planning. The local API remains the default path; no live Vertex AI
+call, deployment, or credentials are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

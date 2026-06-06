@@ -74,6 +74,14 @@ secrets, service account keys, or real project IDs to the repository.
 - Batch prediction completed.
 - Batch output Cloud Storage location captured.
 - Logs and monitoring evidence captured where available.
+- R11 Cloud Run service configured with Vertex endpoint variables.
+- Cloud Run service account has Vertex AI predict permission.
+- `/health` shows vertex endpoint mode.
+- `/predict` request sent to Cloud Run.
+- Vertex AI endpoint receives prediction.
+- Normalised response returned by Cloud Run.
+- Cloud Logging correlation captured.
+- Error handling and timeout evidence captured where available.
 - Vertex AI custom training job.
 - Vertex AI Model Registry entry.
 - Vertex AI model version.

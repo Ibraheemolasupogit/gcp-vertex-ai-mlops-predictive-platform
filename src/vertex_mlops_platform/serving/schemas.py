@@ -59,6 +59,7 @@ class HealthResponse(BaseModel):
     """Health response for local model serving."""
 
     status: str
+    prediction_mode: str
     model_loaded: bool
     model_name: str | None
     model_version: str | None

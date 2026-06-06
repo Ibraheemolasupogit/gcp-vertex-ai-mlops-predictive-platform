@@ -12,6 +12,7 @@ from fastapi import FastAPI, HTTPException
 from vertex_mlops_platform.prediction.model_loader import load_model_bundle
 from vertex_mlops_platform.prediction.predictor import predict_batch, predict_single
 from vertex_mlops_platform.prediction.schemas import PredictionInputError
+from vertex_mlops_platform.serving.proxy_config import load_proxy_config
 from vertex_mlops_platform.serving.schemas import (
     LOCAL_ONLY_NOTICE,
     BatchPredictionRequest,
@@ -20,6 +21,7 @@ from vertex_mlops_platform.serving.schemas import (
     PredictionRequest,
     PredictionResponse,
 )
+from vertex_mlops_platform.serving.vertex_client import VertexEndpointClient
 
 SERVICE_NAME = "predictive-maintenance-local-api"
 SERVICE_VERSION = "0.1.0"
@@ -47,10 +49,12 @@ def root() -> dict[str, Any]:
 @app.get("/health", response_model=HealthResponse)
 def health() -> HealthResponse:
     """Check whether the local model and metadata can be loaded."""
+    proxy_config = load_proxy_config()
     try:
         _, metadata = load_model_bundle()
         return HealthResponse(
             status="healthy",
+            prediction_mode=proxy_config.prediction_mode,
             model_loaded=True,
             model_name=metadata.get("model_name"),
             model_version=metadata.get("model_version"),
@@ -61,6 +65,7 @@ def health() -> HealthResponse:
     except FileNotFoundError as exc:
         return HealthResponse(
             status=f"unhealthy: {exc}",
+            prediction_mode=proxy_config.prediction_mode,
             model_loaded=False,
             model_name=None,
             model_version=None,
@@ -73,6 +78,15 @@ def health() -> HealthResponse:
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest) -> PredictionResponse:
     """Run a single local prediction."""
+    proxy_config = load_proxy_config()
+    if proxy_config.vertex_enabled:
+        prediction = _predict_via_vertex_stub(proxy_config, request.model_dump())
+        return PredictionResponse(
+            **prediction,
+            request_id=str(uuid4()),
+            timestamp=_timestamp(),
+        )
+
     model, metadata = _load_bundle_or_503()
     try:
         prediction = predict_single(model, metadata, request.model_dump())
@@ -113,6 +127,21 @@ def _load_bundle_or_503() -> tuple[Any, dict[str, Any]]:
         return load_model_bundle()
     except FileNotFoundError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+
+def _predict_via_vertex_stub(proxy_config: Any, record: dict[str, Any]) -> dict[str, Any]:
+    if not proxy_config.project_id or not proxy_config.region or not proxy_config.endpoint_id:
+        raise HTTPException(status_code=503, detail="Vertex AI proxy is not configured.")
+    try:
+        client = VertexEndpointClient(
+            project_id=proxy_config.project_id,
+            region=proxy_config.region,
+            endpoint_id=proxy_config.endpoint_id,
+            timeout_seconds=proxy_config.request_timeout_seconds,
+        )
+        return client.predict_stub(record)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 
 def _timestamp() -> str:
