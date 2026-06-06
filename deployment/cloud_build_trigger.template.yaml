@@ -1,0 +1,34 @@
+# Documentation template only. This file is not an active Cloud Build trigger.
+# Replace placeholders outside the repository when creating a real trigger.
+
+trigger_name: predictive-maintenance-api-main-trigger
+description: Build and deploy the FastAPI serving image from the main branch.
+repository_owner: your-github-owner
+repository_name: gcp-vertex-ai-mlops-predictive-platform
+branch_regex: "^main$"
+cloudbuild_config_path: cloudbuild.yaml
+service_account_placeholder: projects/PROJECT_ID/serviceAccounts/CLOUD_BUILD_SERVICE_ACCOUNT
+
+substitutions:
+  _PROJECT_ID: your-gcp-project-id
+  _REGION: europe-west2
+  _ARTIFACT_REPOSITORY: vertex-mlops-serving
+  _IMAGE_NAME: predictive-maintenance-api
+  _IMAGE_TAG: github-main
+  _SERVICE_NAME: predictive-maintenance-api
+  _PORT: "8080"
+  _ALLOW_UNAUTHENTICATED: "true"
+
+included_files:
+  - Dockerfile
+  - cloudbuild.yaml
+  - requirements.txt
+  - src/**
+  - models/**
+
+ignored_files:
+  - docs/**
+  - evidence/**
+  - reports/**
+  - outputs/**
+  - data/**

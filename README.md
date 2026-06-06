@@ -47,6 +47,11 @@ Cloud Run deploy using parameterized substitutions, plus a manual submit helper.
 No GitHub trigger, traffic splitting, Vertex AI deployment, credentials, or real
 project IDs are included.
 
+R7 status: the GitHub-triggered Cloud Build deployment path is documented with a
+trigger template, dry-run trigger helper, and trigger evidence folder. No real
+trigger was created, and no traffic splitting, Vertex AI deployment,
+credentials, or real project IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

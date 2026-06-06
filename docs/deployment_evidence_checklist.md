@@ -22,6 +22,16 @@ secrets, service account keys, or real project IDs to the repository.
 - Cloud Run service revision updated by CI/CD.
 - `/health` endpoint response after CI/CD deployment.
 - `/predict` endpoint response after CI/CD deployment.
+- R7 GitHub repository connected to Cloud Build.
+- Cloud Build trigger configured for the main branch.
+- Trigger substitutions captured.
+- Commit pushed to GitHub.
+- Cloud Build triggered automatically.
+- Triggered build logs show Docker build, push, and deploy.
+- Artifact Registry image created from trigger.
+- Cloud Run revision updated from trigger.
+- `/health` endpoint works after triggered deployment.
+- `/predict` endpoint works after triggered deployment.
 - Cloud Build successful run.
 - Artifact Registry image and digest.
 - Cloud Run service.
