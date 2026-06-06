@@ -61,6 +61,11 @@ R9 status: Vertex AI custom training and Model Registry mapping has been added
 with dry-run helper scripts, templates, and an evidence folder. No real Vertex
 AI jobs, endpoint deployment, credentials, or real project IDs are included.
 
+R10 status: Vertex AI endpoint deployment mapping, online prediction readiness,
+and batch prediction readiness have been added with dry-run helper scripts and
+an endpoint evidence folder. No real endpoint, prediction job, credentials, or
+real project IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

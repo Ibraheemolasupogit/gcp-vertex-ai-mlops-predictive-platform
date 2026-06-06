@@ -51,6 +51,7 @@ models/*
 *.key
 *.pem
 *.jsonl
+!examples/vertex_batch_prediction_input.jsonl
 credentials/
 secrets/
 

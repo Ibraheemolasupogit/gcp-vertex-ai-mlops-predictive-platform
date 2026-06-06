@@ -64,6 +64,16 @@ secrets, service account keys, or real project IDs to the repository.
 - Model version alias captured.
 - Model metrics and metadata captured.
 - Model approval and lifecycle mapping captured.
+- R10 Vertex AI endpoint created.
+- Model deployed to endpoint.
+- Endpoint ID captured.
+- Deployed model details captured.
+- Online prediction request captured.
+- Online prediction response captured.
+- Batch prediction job created.
+- Batch prediction completed.
+- Batch output Cloud Storage location captured.
+- Logs and monitoring evidence captured where available.
 - Vertex AI custom training job.
 - Vertex AI Model Registry entry.
 - Vertex AI model version.

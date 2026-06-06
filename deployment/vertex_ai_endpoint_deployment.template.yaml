@@ -1,0 +1,33 @@
+# Template only. This file documents a parameterized Vertex AI endpoint
+# deployment shape and is not an active deployment.
+
+endpoint:
+  display_name: ${VERTEX_ENDPOINT_DISPLAY_NAME}
+  project: ${PROJECT_ID}
+  location: ${REGION}
+  labels:
+    workload: predictive-maintenance
+    stage: candidate
+    data-type: synthetic
+    managed-by: template
+
+deployed_model:
+  model_id: ${VERTEX_MODEL_ID}
+  deployed_model_display_name: ${DEPLOYED_MODEL_DISPLAY_NAME}
+  machine_type: ${MACHINE_TYPE}
+  min_replica_count: ${MIN_REPLICA_COUNT}
+  max_replica_count: ${MAX_REPLICA_COUNT}
+  traffic_split_percent: ${TRAFFIC_SPLIT_PERCENT}
+
+prediction_contract:
+  online_request_example: examples/vertex_online_prediction_request.json
+  batch_input_example: examples/vertex_batch_prediction_input.jsonl
+  target_or_leakage_fields_excluded:
+    - failure_within_label_window
+
+explanation_and_monitoring_placeholders:
+  explanation_enabled: false
+  model_monitoring_enabled: false
+  notes:
+    - Explainability and monitoring are documented later in the roadmap.
+    - Cloud Run API wrapper in front of Vertex AI is deferred to R11.
