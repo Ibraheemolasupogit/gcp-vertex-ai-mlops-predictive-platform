@@ -57,6 +57,10 @@ dry-run traffic helpers, and traffic-splitting evidence placeholders have been
 added. No live traffic split, Vertex AI deployment, credentials, or real project
 IDs are included.
 
+R9 status: Vertex AI custom training and Model Registry mapping has been added
+with dry-run helper scripts, templates, and an evidence folder. No real Vertex
+AI jobs, endpoint deployment, credentials, or real project IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

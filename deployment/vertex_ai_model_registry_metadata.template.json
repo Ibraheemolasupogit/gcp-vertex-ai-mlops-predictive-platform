@@ -1,0 +1,33 @@
+{
+  "template_only": true,
+  "model_display_name": "${VERTEX_MODEL_DISPLAY_NAME}",
+  "model_version_alias": "${VERTEX_MODEL_VERSION_ALIAS}",
+  "model_artifact_uri": "${MODEL_ARTIFACT_GCS_URI}",
+  "serving_container_image_uri": "${SERVING_CONTAINER_IMAGE_URI}",
+  "metrics": {
+    "source": "outputs/model_metrics.json",
+    "accuracy": "placeholder",
+    "precision": "placeholder",
+    "recall": "placeholder",
+    "f1": "placeholder",
+    "roc_auc": "placeholder"
+  },
+  "approval_status": "candidate_review",
+  "lifecycle_stage": "pre_endpoint_registration",
+  "dataset_version": "synthetic-local-sample",
+  "feature_version": "local-feature-table",
+  "training_job_name": "${VERTEX_TRAINING_JOB_NAME}",
+  "labels": {
+    "workload": "predictive-maintenance",
+    "stage": "candidate",
+    "data_type": "synthetic",
+    "source": "local_to_vertex_mapping"
+  },
+  "intended_use": "Predict synthetic machine failure risk for a portfolio MLOps workflow.",
+  "limitations": [
+    "Synthetic data only.",
+    "No Vertex AI endpoint is created in R9.",
+    "Metrics should be validated with real operational data before production use."
+  ],
+  "synthetic_data_notice": "This model registry mapping is for local-first portfolio evidence and does not claim production readiness."
+}

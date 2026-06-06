@@ -54,6 +54,16 @@ secrets, service account keys, or real project IDs to the repository.
 
 ## Vertex AI Lifecycle
 
+- R9 Vertex AI API enabled.
+- Staging bucket prepared.
+- Custom training job submitted.
+- Training job completed.
+- Training logs captured.
+- Model artifact written to Cloud Storage.
+- Vertex AI Model Registry entry created.
+- Model version alias captured.
+- Model metrics and metadata captured.
+- Model approval and lifecycle mapping captured.
 - Vertex AI custom training job.
 - Vertex AI Model Registry entry.
 - Vertex AI model version.

@@ -1,0 +1,41 @@
+# Template only. This file documents a parameterized Vertex AI custom training
+# job shape and is not a live submitted job.
+
+display_name: ${VERTEX_TRAINING_JOB_NAME}
+project: ${PROJECT_ID}
+location: ${REGION}
+staging_bucket: ${VERTEX_STAGING_BUCKET}
+
+worker_pool_specs:
+  - machine_spec:
+      machine_type: ${TRAINING_MACHINE_TYPE}
+    replica_count: 1
+    container_spec:
+      image_uri: ${TRAINING_CONTAINER_IMAGE_URI}
+      command:
+        - python
+      args:
+        - scripts/run_training_pipeline.py
+      env:
+        - name: FEATURE_TABLE_GCS_URI
+          value: ${FEATURE_TABLE_GCS_URI}
+        - name: MODEL_ARTIFACT_GCS_URI
+          value: ${MODEL_ARTIFACT_GCS_URI}
+        - name: MODEL_DISPLAY_NAME
+          value: ${VERTEX_MODEL_DISPLAY_NAME}
+        - name: MODEL_VERSION_ALIAS
+          value: ${VERTEX_MODEL_VERSION_ALIAS}
+
+base_output_directory:
+  output_uri_prefix: ${MODEL_ARTIFACT_GCS_URI}
+
+labels:
+  workload: predictive-maintenance
+  stage: candidate
+  data-type: synthetic
+  managed-by: template
+
+notes:
+  - This template maps the local training workflow to Vertex AI custom training.
+  - Replace placeholders locally or through deployment automation before use.
+  - Endpoint deployment and online prediction are intentionally deferred to R10.
