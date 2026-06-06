@@ -42,6 +42,11 @@ added with parameterized deployment scripts and an evidence folder. No Cloud
 Build, GitHub trigger, traffic splitting, Vertex AI deployment, real
 credentials, or real project IDs are included.
 
+R6 status: Cloud Build CI/CD configuration has been added for build, push, and
+Cloud Run deploy using parameterized substitutions, plus a manual submit helper.
+No GitHub trigger, traffic splitting, Vertex AI deployment, credentials, or real
+project IDs are included.
+
 ## Course-Aligned Objective
 
 The realigned objective is to build a stronger practical GCP deployment evidence

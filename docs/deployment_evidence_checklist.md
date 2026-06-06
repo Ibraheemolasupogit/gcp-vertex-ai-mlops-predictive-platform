@@ -14,6 +14,14 @@ secrets, service account keys, or real project IDs to the repository.
 - `/predict` endpoint response screenshot.
 - Cloud Logging entry screenshot.
 - Cleanup evidence if resources are removed after demonstration.
+- R6 `cloudbuild.yaml` present.
+- Cloud Build manual run submitted.
+- Cloud Build build step success.
+- Docker image pushed to Artifact Registry by Cloud Build.
+- Cloud Run deploy step success.
+- Cloud Run service revision updated by CI/CD.
+- `/health` endpoint response after CI/CD deployment.
+- `/predict` endpoint response after CI/CD deployment.
 - Cloud Build successful run.
 - Artifact Registry image and digest.
 - Cloud Run service.

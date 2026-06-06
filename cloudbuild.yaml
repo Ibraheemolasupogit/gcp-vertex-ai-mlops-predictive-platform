@@ -1,0 +1,51 @@
+substitutions:
+  _PROJECT_ID: "your-gcp-project-id"
+  _REGION: "europe-west2"
+  _ARTIFACT_REPOSITORY: "vertex-mlops-serving"
+  _IMAGE_NAME: "predictive-maintenance-api"
+  _IMAGE_TAG: "manual"
+  _SERVICE_NAME: "predictive-maintenance-api"
+  _PORT: "8080"
+  _ALLOW_UNAUTHENTICATED: "true"
+
+steps:
+  - id: "build-docker-image"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      - "build"
+      - "-t"
+      - "${_REGION}-docker.pkg.dev/${_PROJECT_ID}/${_ARTIFACT_REPOSITORY}/${_IMAGE_NAME}:${_IMAGE_TAG}"
+      - "."
+
+  - id: "push-docker-image"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      - "push"
+      - "${_REGION}-docker.pkg.dev/${_PROJECT_ID}/${_ARTIFACT_REPOSITORY}/${_IMAGE_NAME}:${_IMAGE_TAG}"
+
+  - id: "deploy-cloud-run"
+    name: "gcr.io/google.com/cloudsdktool/cloud-sdk:slim"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        set -euo pipefail
+
+        auth_flag="--no-allow-unauthenticated"
+        if [[ "${_ALLOW_UNAUTHENTICATED}" == "true" ]]; then
+          auth_flag="--allow-unauthenticated"
+        fi
+
+        gcloud run deploy "${_SERVICE_NAME}" \
+          --project="${_PROJECT_ID}" \
+          --region="${_REGION}" \
+          --platform=managed \
+          --image="${_REGION}-docker.pkg.dev/${_PROJECT_ID}/${_ARTIFACT_REPOSITORY}/${_IMAGE_NAME}:${_IMAGE_TAG}" \
+          --port="${_PORT}" \
+          "${auth_flag}"
+
+images:
+  - "${_REGION}-docker.pkg.dev/${_PROJECT_ID}/${_ARTIFACT_REPOSITORY}/${_IMAGE_NAME}:${_IMAGE_TAG}"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
