@@ -7,3 +7,4 @@ PYTHON_BIN="${PYTHON:-python3}"
 "${PYTHON_BIN}" scripts/run_feature_engineering.py
 "${PYTHON_BIN}" scripts/run_training_pipeline.py
 "${PYTHON_BIN}" scripts/run_approval_gates.py
+"${PYTHON_BIN}" scripts/run_local_prediction.py

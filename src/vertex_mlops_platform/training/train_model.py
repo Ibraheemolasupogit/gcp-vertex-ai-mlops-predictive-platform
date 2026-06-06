@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -81,6 +83,44 @@ def save_model(model: Pipeline, output_path: Path | str) -> Path:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(model, output_path)
+    return output_path
+
+
+def build_model_metadata(
+    artifacts: dict[str, Any],
+    config: dict[str, Any],
+    model_artifact_path: Path | str,
+    approval_status: str | None = None,
+) -> dict[str, Any]:
+    """Build serving-ready metadata for the local model artifact."""
+    training_config = config["training"]
+    model_artifact_path = Path(model_artifact_path)
+    return {
+        "model_name": "predictive_maintenance_classifier",
+        "model_version": "local-v1",
+        "model_type": training_config["model_type"],
+        "target_column": training_config["target_column"],
+        "feature_columns": artifacts["feature_columns"],
+        "categorical_features": artifacts["categorical_features"],
+        "numeric_features": artifacts["numeric_features"],
+        "model_artifact_path": str(model_artifact_path),
+        "trained_at": datetime.now(UTC).isoformat(),
+        "training_data_path": training_config["feature_table_path"],
+        "metrics_path": training_config["metrics_output_path"],
+        "feature_table_path": training_config["feature_table_path"],
+        "approval_status": approval_status or "not_evaluated_by_serving_metadata",
+        "local_only_notice": (
+            "This artifact is generated locally from synthetic data. It is prepared for "
+            "serving development only and is not deployed to GCP."
+        ),
+    }
+
+
+def save_model_metadata(metadata: dict[str, Any], output_path: Path | str) -> Path:
+    """Persist model metadata locally."""
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     return output_path
 
 

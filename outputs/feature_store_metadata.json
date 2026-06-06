@@ -1,6 +1,6 @@
 {
   "feature_table_path": "/Users/privilege/Desktop/GitHub_repository/gcp-vertex-ai-mlops-predictive-platform/data/processed/feature_table.csv",
-  "generated_at": "2026-06-05T03:50:16.442397+00:00",
+  "generated_at": "2026-06-06T00:54:23.649371+00:00",
   "row_count": 18000,
   "feature_count": 51,
   "entity_keys": [

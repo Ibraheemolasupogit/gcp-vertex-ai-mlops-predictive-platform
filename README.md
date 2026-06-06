@@ -20,10 +20,16 @@ The repository currently implements a local-first ML workflow:
 - RandomForest model training and evaluation
 - Model artifact, metrics, feature importance, and evaluation report
 - Deployment approval gates with readiness status
+- Serving-ready model metadata and local prediction utilities
 - Tests for data generation, validation, features, training, and gates
 
 No model is deployed. No GCP resources, credentials, secrets, service account
 keys, or real project IDs are included.
+
+R2 status: the local model artifact structure is prepared for serving with
+`models/model_metadata.json`, reusable prediction utilities, and a local
+prediction smoke script. No API, Docker image, Cloud Run service, or GCP
+deployment has been added yet.
 
 ## Course-Aligned Objective
 

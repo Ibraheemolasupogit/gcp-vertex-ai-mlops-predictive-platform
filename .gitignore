@@ -42,6 +42,8 @@ reports/*
 models/*
 !models/.gitkeep
 !models/predictive_maintenance_model.joblib
+!models/model_metadata.json
+!models/README.md
 
 # Secrets and local environment
 .env

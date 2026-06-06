@@ -15,9 +15,11 @@ from vertex_mlops_platform.training.evaluate_model import (  # noqa: E402
     write_metrics,
 )
 from vertex_mlops_platform.training.train_model import (  # noqa: E402
+    build_model_metadata,
     load_feature_table,
     load_model_config,
     save_model,
+    save_model_metadata,
     train_predictive_maintenance_model,
 )
 
@@ -31,6 +33,12 @@ def main() -> int:
     artifacts = train_predictive_maintenance_model(feature_table, config)
 
     model_path = save_model(artifacts["model"], PROJECT_ROOT / training_config["model_output_path"])
+    metadata = build_model_metadata(
+        artifacts,
+        config,
+        model_artifact_path=model_path.relative_to(PROJECT_ROOT),
+    )
+    save_model_metadata(metadata, PROJECT_ROOT / "models" / "model_metadata.json")
     metrics = evaluate_classifier(
         model=artifacts["model"],
         x_train=artifacts["x_train"],
@@ -56,6 +64,7 @@ def main() -> int:
     model_metrics = metrics["metrics"]
     print("Training and evaluation complete")
     print(f"Model artifact: {model_path.relative_to(PROJECT_ROOT)}")
+    print("Model metadata: models/model_metadata.json")
     print(f"Accuracy: {model_metrics['accuracy']:.4f}")
     print(f"Precision: {model_metrics['precision']:.4f}")
     print(f"Recall: {model_metrics['recall']:.4f}")
